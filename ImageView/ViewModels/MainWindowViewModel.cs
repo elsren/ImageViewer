@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EventBinding.MVVM;
+using ImageView.ViewModels.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -11,31 +13,39 @@ using System.Windows.Data;
 
 namespace ImageView.ViewModels
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : ViewModelBase
     {
-        private readonly Page GridView;
-        private readonly Page SingleView;
+        #region Constants
 
-        public Page CurrentPage { get; set; }
+        public static readonly string GridImageViewModelAlias = "GridVM";
+        public static readonly string SingleImageViewModelAlias = "SingleVM";
 
-        public Image SelectedImage { get; set; }
+        #endregion
+
+        #region Fields
 
         public static ObservableCollection<Image> Images;
 
-        public static void ChangePage(object source)
-        {
-           ;
-        }
+        #endregion
 
         public MainWindowViewModel()
         {
             Images = Image.GetImagesFromFolder();
 
-            GridView = new Views.GridImagesView();
-            SingleView = new Views.SingleImagesView();
-
-
-            CurrentPage = GridView;
+            GoToGridView();
         }
+
+        public static void GoToGridView()
+        {
+           Navigation.Navigate(Navigation.GridViewAlias, 
+               ViewModelsResolver.Instance.GetViewModelInstance(GridImageViewModelAlias));
+        }
+
+        public static void GoToSingleImageView()
+        {
+            Navigation.Navigate(Navigation.SingleViewAlias, 
+                ViewModelsResolver.Instance.GetViewModelInstance(SingleImageViewModelAlias));
+        }
+
     }
 }

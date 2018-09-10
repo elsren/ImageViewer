@@ -13,8 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ImageView.ViewModels;
+using Navigation;
 
-namespace ImageView
+namespace ImageView.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,6 +25,15 @@ namespace ImageView
         public MainWindow()
         {
             InitializeComponent();
+
+            Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Navigation.Service = MainFrame.NavigationService;
+
+            DataContext = new MainWindowViewModel();
         }
     }
 }

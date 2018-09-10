@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:ImageView.Views"
         mc:Ignorable="d"
         Title="SingleImagesView" Height="auto" Width="auto" MinHeight="300" MinWidth="200">
+    
     <Grid>
         <StackPanel Orientation="Horizontal" Background="AliceBlue">
             <Grid>

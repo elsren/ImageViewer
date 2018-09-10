@@ -21,7 +21,6 @@ namespace ImageView.ViewModels
             {
                 return MainWindowViewModel.Images;
             }
-            set { }
         }
 
         private void OnDrop(object args)
@@ -44,7 +43,7 @@ namespace ImageView.ViewModels
         {
             if(args is MouseButtonEventArgs mouseButtonEventArgs)
             {
-                MainWindowViewModel.ChangePage(mouseButtonEventArgs);
+                ;
             }
         }
 

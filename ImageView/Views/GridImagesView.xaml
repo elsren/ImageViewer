@@ -3,16 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ImageView"
-        xmlns:vm="clr-namespace:ImageView.ViewModels"
         xmlns:eb="clr-namespace:EventBinding;assembly=EventBinding"
         mc:Ignorable="d"
         Title="GridImagesView" Height="auto" Width="auto">
-
-    <Page.DataContext>
-        <vm:GridImageViewModel/>
-    </Page.DataContext>
-
+    
     <Grid>
         <ListView
             Name="ImageListbox"

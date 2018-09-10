@@ -37,10 +37,6 @@
     <Reference Include="EventBinding">
       <HintPath>.\EventBinding.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -61,7 +57,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Navigation\Interfaces\IPageResolver.cs" />
+    <Compile Include="Navigation\Navigation.cs" />
+    <Compile Include="Navigation\PagesResolver.cs" />
     <Compile Include="ViewModels\GridImageViewModel.cs" />
+    <Compile Include="ViewModels\Interfaces\IViewModelsResolver.cs" />
+    <Compile Include="ViewModels\SingleImageViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelsResolver.cs" />
     <Compile Include="Views\SingleImagesView.xaml.cs">
       <DependentUpon>SingleImagesView.xaml</DependentUpon>
     </Compile>
@@ -110,7 +112,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -122,5 +123,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
