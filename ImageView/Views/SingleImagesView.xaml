@@ -15,9 +15,9 @@
                     <ColumnDefinition Width="0.6*"/>
                     <ColumnDefinition Width="0.4*"/>
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Stretch="Uniform" Margin="10" MaxWidth="1100"/>
-                <Button Click="{eb:EventBinding}" FontSize="20" Grid.Column="1" Content="Prev" VerticalAlignment="Center" Margin="0,0,0,120"/>
-                <Button Click="{eb:EventBinding}" FontSize="20" Grid.Column="1" Content="Next" VerticalAlignment="Center" Margin="0,120,0,0"/>
+                <Image x:Name="ImageView" Grid.Column="0" Stretch="Uniform" Margin="10" MaxWidth="1100" Source="{Binding ImagePath}"/>
+                <Button x:Name="PrevBtn" Click="{eb:EventBinding CommandParameter=$e}" FontSize="20" Grid.Column="1" Content="Prev" VerticalAlignment="Center" Margin="0,0,0,120"/>
+                <Button x:Name="NextBtn" Click="{eb:EventBinding CommandParameter=$e}" FontSize="20" Grid.Column="1" Content="Next" VerticalAlignment="Center" Margin="0,120,0,0"/>
             </Grid>
         </StackPanel>
     </Grid>

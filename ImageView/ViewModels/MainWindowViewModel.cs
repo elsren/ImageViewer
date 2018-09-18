@@ -24,7 +24,25 @@ namespace ImageView.ViewModels
 
         #region Fields
 
+        private static int _selectedImageIndex;
         public static ObservableCollection<Image> Images;
+        public static int SelectedImagIndex
+        {
+            get
+            {
+                return _selectedImageIndex;
+            }
+
+            set
+            {
+                if (value >= Images.Count)
+                    _selectedImageIndex = 0;
+                else if (value <= -1)
+                    _selectedImageIndex = Images.Count - 1;
+                else
+                    _selectedImageIndex = value;
+            }
+        }
 
         #endregion
 

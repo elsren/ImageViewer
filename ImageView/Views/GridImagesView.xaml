@@ -9,7 +9,6 @@
     
     <Grid>
         <ListView
-            Name="ImageListbox"
             Background="AliceBlue" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
             SelectionMode="Single"
             ItemsSource="{Binding Images}"

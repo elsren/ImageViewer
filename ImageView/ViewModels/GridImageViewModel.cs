@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace ImageView.ViewModels
@@ -43,7 +44,8 @@ namespace ImageView.ViewModels
         {
             if(args is MouseButtonEventArgs mouseButtonEventArgs)
             {
-                ;
+                MainWindowViewModel.SelectedImagIndex = ((ListView)mouseButtonEventArgs.Source).SelectedIndex;
+                MainWindowViewModel.GoToSingleImageView();
             }
         }
 
