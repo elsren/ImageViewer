@@ -55,14 +55,12 @@ namespace ImageView.ViewModels
 
         public static void GoToGridView()
         {
-           Navigation.Navigate(Navigation.GridViewAlias, 
-               ViewModelsResolver.Instance.GetViewModelInstance(GridImageViewModelAlias));
+           Navigation.Navigate(Navigation.GridViewAlias, GridImageViewModelAlias);
         }
 
         public static void GoToSingleImageView()
         {
-            Navigation.Navigate(Navigation.SingleViewAlias, 
-                ViewModelsResolver.Instance.GetViewModelInstance(SingleImageViewModelAlias));
+            Navigation.Navigate(Navigation.SingleViewAlias, SingleImageViewModelAlias);
         }
 
     }

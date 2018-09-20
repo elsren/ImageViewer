@@ -22,6 +22,13 @@ namespace ImageView.Views
         public SingleImagesView()
         {
             InitializeComponent();
+
+            Loaded += SingleImagesView_Loaded;
+        }
+
+        private void SingleImagesView_Loaded(object sender, RoutedEventArgs e)
+        {
+            PrevBtn.Focus();
         }
     }
 }

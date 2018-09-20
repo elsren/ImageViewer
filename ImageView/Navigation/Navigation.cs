@@ -3,6 +3,7 @@ using System.Windows.Navigation;
 using System.Windows.Controls;
 using Navigation.Interfaces;
 using Navigation;
+using ImageView.ViewModels;
 
 namespace ImageView
 {
@@ -58,6 +59,19 @@ namespace ImageView
         public static void Navigate(Page page)
         {
             Navigate(page, null);
+        }
+
+        public static void Navigate(string uriView, string uriViewModel)
+        {
+            if (Instance._navService == null || uriView == null || uriViewModel == null)
+            {
+                return;
+            }
+
+            var page = Instance._resolver.GetPageInstance(uriView);
+            var context = ViewModelsResolver.Instance.GetViewModelInstance(uriViewModel);
+
+            Navigate(page, context);
         }
 
         public static void Navigate(string uri, object context)
