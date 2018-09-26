@@ -1,4 +1,5 @@
 ﻿using EventBinding.MVVM;
+using ImageView.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -34,7 +35,7 @@ namespace ImageView.ViewModels
                 {
                     if (Helper.SuitableExtention(data[i]))
                     {
-                        Images.Add(new Image(data[i]));
+                        Images.Add(new Image(data[i], BitmapConversion.ImagePathToBitmapSource(data[i])));
                     }
                 }
             }

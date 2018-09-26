@@ -19,7 +19,7 @@
             <ListBox.ItemTemplate >
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding ImagePath}" Margin="10" Height="250" Width="300" VerticalAlignment="Top"/>
+                        <Image Source="{Binding ImageBitmap}" Margin="10" Height="250" Width="300" VerticalAlignment="Top"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

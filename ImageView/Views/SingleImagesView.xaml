@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:eb="clr-namespace:EventBinding;assembly=EventBinding"
-        xmlns:local="clr-namespace:ImageView.Views"
         mc:Ignorable="d"
         Title="SingleImagesView" Height="auto" Width="auto" MinHeight="300" MinWidth="200"
         KeyUp="{eb:EventBinding CommandParameter=$e}"
@@ -15,7 +14,7 @@
             <ColumnDefinition Width="85*"/>
             <ColumnDefinition Width="15*"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="ImageView" Grid.Column="0" Stretch="Uniform" Margin="10" MaxWidth="1100" Source="{Binding ImagePath}"/>
+        <Image x:Name="ImageView" Grid.Column="0" Stretch="Uniform" Margin="10" MaxWidth="1100" Source="{Binding ImageBitmap}"/>
         <Button x:Name="PrevBtn" Click="{eb:EventBinding CommandParameter=$e}" FontSize="20" Grid.Column="1" Content="Prev" VerticalAlignment="Center" Margin="0,0,30,120" Width="80" HorizontalAlignment="Right"/>
         <Button x:Name="NextBtn" Click="{eb:EventBinding CommandParameter=$e}" FontSize="20" Grid.Column="1" Content="Next" VerticalAlignment="Center" Margin="0,120,30,0" Width="80" HorizontalAlignment="Right"/>
     </Grid>

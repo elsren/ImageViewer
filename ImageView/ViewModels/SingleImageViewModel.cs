@@ -1,7 +1,9 @@
 ﻿using EventBinding.MVVM;
+using ImageView.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -9,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace ImageView.ViewModels
 {
@@ -30,20 +33,26 @@ namespace ImageView.ViewModels
 
         public DelegateCommand KeyUpCommand { get; set; }
 
-        public string ImagePath { get { return MainWindowViewModel.Images[MainWindowViewModel.SelectedImagIndex].ImagePath; } }
+        public BitmapSource ImageBitmap
+        {
+            get
+            {
+                return BitmapConversion.ImagePathToBitmapSource(MainWindowViewModel.Images[MainWindowViewModel.SelectedImagIndex].ImagePath);
+            }
+        }
 
         #endregion
 
         private void PrevImage()
         {
             MainWindowViewModel.SelectedImagIndex--;
-            OnPropertyChanged("ImagePath");
+            OnPropertyChanged("ImageBitmap");
         }
 
         private void NextImage()
         {
             MainWindowViewModel.SelectedImagIndex++;
-            OnPropertyChanged("ImagePath");
+            OnPropertyChanged("ImageBitmap");
         }
 
         #region Events
